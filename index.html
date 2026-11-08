@@ -126,18 +126,17 @@
             </p>
         </header>
 
-        <!-- About Section -->
+        <!-- Generator Section -->
         <main class="container mx-auto px-6 py-12 max-w-4xl">
             <section class="gothic-card p-8 md:p-12 mb-12 text-center">
-                <div class="text-6xl mb-6">🖤</div>
-                <h2 class="text-3xl md:text-4xl text-pink-300 mb-6 gothic-title">Bem-vinda ao meu Refúgio</h2>
-                <p class="text-lg leading-relaxed mb-4">
-                    Olá! Eu sou a <strong>Rafinha</strong>. Criei este espaço para celebrar tudo o que é lindamente sombrio e irresistivelmente fofo. 
-                    Aqui, poções do amor são feitas com algodão doce, morcegos usam lacinhos e cada sombra esconde um segredo romântico.
-                </p>
-                <p class="text-lg leading-relaxed italic text-pink-200">
-                    "Na escuridão da noite, nosso romance floresce como uma rosa rubra."
-                </p>
+                <div class="text-6xl mb-6">🔮</div>
+                <h2 class="text-3xl md:text-4xl text-pink-300 mb-6 gothic-title">Gerador Sombrio da Rafinha</h2>
+                <button onclick="gerarMagia()" class="px-8 py-3 bg-gradient-to-r from-purple-800 to-pink-900 hover:from-purple-700 hover:to-pink-800 text-white rounded-full font-bold gothic-title text-2xl transition-all shadow-[0_0_15px_#ff85c0] border border-pink-400 transform hover:scale-105 mb-6">
+                    Revelar Magia ✨
+                </button>
+                <div id="resultadoGerador" class="text-xl md:text-2xl leading-relaxed italic text-pink-200 min-h-[3rem] transition-opacity duration-300">
+                    Clique no botão para receber uma surpresa mágica... 🦇
+                </div>
             </section>
 
             <!-- Interests / Cards Grid -->
@@ -532,6 +531,31 @@
             });
             
             pReq = requestAnimationFrame(platformerLoop);
+        }
+
+        // ==========================================
+        // GERADOR DA RAFINHA
+        // ==========================================
+        const magias = [
+            "Você encontrou uma poção do amor sabor algodão doce! 🧪💖",
+            "Um morceguinho com laço pousou no seu ombro! 🦇🎀",
+            "Uma rosa negra desabrochou só para você! 🥀🖤",
+            "Um feitiço de proteção e abraços quentinhos foi lançado! ✨👻",
+            "Você tropeçou em um caldeirão cheio de glitter escuro! 🔮✨",
+            "Um gatinho preto cruzou seu caminho para trazer sorte! 🐈‍⬛🍀",
+            "Sussurros românticos ecoam pelas sombras da noite... 🌙💬",
+            "Um vampiro charmoso te mandou uma carta com selo de coração! 💌🧛‍♂️"
+        ];
+
+        function gerarMagia() {
+            const resultado = document.getElementById('resultadoGerador');
+            resultado.style.opacity = 0; // fade out
+            
+            setTimeout(() => {
+                const index = Math.floor(Math.random() * magias.length);
+                resultado.innerText = magias[index];
+                resultado.style.opacity = 1; // fade in
+            }, 300);
         }
     </script>
 </body>
